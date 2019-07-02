@@ -4,25 +4,192 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title></title>
+
+  <script src="https://kit.fontawesome.com/24d7844539.js"></script>
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <title>SB Admin</title>
 </head>
 <body>
-  <div class="topbar">
-<div class="cards"></div>
+ 
+<div class="wrapper">
 
-  </div>
-  <div class="sidebar">
+  <head>
+    <div class="searchbar">
+      <div class="search">
+        <input type="text" class="form-control" placeholder="Search for...">
+          <button class="searchButton" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+      </div>
+    
+      <div>
+        <i class="fas fa-bell"></i>
+        <i class="fas fa-envelope"></i>
+      </div>
+
+      <div>Valerie Luna</div>
+    </div>
+  </head>
+
+  <!-- Navigation bar-->
+  <nav>
+    <div><i class="far fa-laugh-wink"></i>SB ADMIN²</div>
+
+    <i class="fas fa-tachometer-alt"></i> Dashboard
+
     <ul>
+      <li class="first-li">Interface</li>
 
+      <li class="Compenents dropdown"> 
+        <div><i class="fas fa-cog"></i>Components<i class="fas fa-chevron-down"></i></div>
+        <div class="dropdown-content">
+          <p>Custom components:</p>
+          <a href="#">Buttons</a>
+          <a href="#">Cards</a>
+        </div>
+      </li>
 
-
-
-      
+      <li class="Utilities dropdown"> 
+        <div><i class="fas fa-wrench"></i>Utilities<i class="fas fa-chevron-down"></i></div>
+        <div class="dropdown-content">
+          <p>Custom utilities:</p>
+          <a href="#">Colors</a>
+          <a href="#">Borders</a>
+          <a href="#">Animations</a>
+          <a href="#">Other</a>
+        </div>
+      </li>
     </ul>
+
+    <ul>
+      <li class="first-li">Addons</li>
+      <li class="Pages dropdown"> 
+        <div><i class="fas fa-folder"></i>Pages<i class="fas fa-chevron-down"></i></div>
+        <div class="dropdown-content">
+          <p>Login screens:</p>
+          <a href="#">Login</a>
+          <a href="#">Register</a>
+          <a href="#">Forgot Password</a>
+          <a href="#">Other</a>
+          <p>Other pages:</p>
+          <a href="#">404 Page</a>
+          <a href="#">Blank Page</a>
+        </div>
+      </li>
+      <li><i class="fas fa-chart-area"></i>Charts</li>
+      <li><i class="fas fa-table"></i>Tables</li>
+    </ul>
+  </nav>
+
+  <main>
+     <!-- WVC: Info-cards bovenaan -->
+    <div class="cards-container">
+      <div class="info-card-small info-card-monthly">
+        <div class="card-text">
+          <h2>Earnings (monthly)</h2>
+          <p>$40,000</p>
+        </div>
+        <div class="icon"><i class="fas fa-calendar"></i></div>
+      </div>
+  
+      <div class="info-card-small info-card-annual">
+        <div class="card-text">
+          <h2>Earnings (annual)</h2>
+          <p>$215,000</p>
+        </div>
+        <div class="icon"><i class="fas fa-dollar-sign"></i></div>
+      </div>
+  
+      <div class="info-card-small info-card-tasks">
+        <div class="card-text">
+          <h2>Tasks</h2>
+          <p>50%</p>
+        </div>
+        <div class="progress">
+          <div class="progress-bar"></div>
+        </div>
+  
+        <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+      </div>
+  
+      <div class="info-card-small info-card-pending-requests">
+        <div class="card-text">
+          <h2>Pending requests</h2>
+          <p>18</p>
+        </div>
+        <div class="icon"><i class="fas fa-comments"></i></div>
+      </div>
+    </div>
+  
+  <!-- KD: big boxes-->
+  <div class="chart">
+    <div class="chart header">
+      <h5>Earnings Overview</h5>
+    </div>
+    <div class="chart area"><img src="images/first_chart.jpg" alt="chart"></div>
+  </div>
+  <div class="chart">
+    <div class="chart header">
+      <h5>Revenue Sources</h5>
+    </div>
+    <div class="chart area"><img src="images/donutchart.jpg" alt="chart"></div>
+    <div class="legend">
+      <div class="circle">Direct</div>
+      <div class="circle">Social</div>
+      <div class="circle">Referral</div>
+    </div>
+  </div>
+  <div class="chart">
+    <div class="chart header">
+      <h5>Projects</h5>
+    </div>
+    <div class="chart area">
+      <div><span>Server Migration</span><span> 20%</span></div>
+      <progress value="20" max="100"></progress>
+      <div><span>Sales Tracking</span><span> 40%</span></div><progress value="40" max="100">
+      </progress>
+      <div><span>Customer Database</span><span> 60%</span></div><progress value="60" max="100">
+      </progress>
+      <div><span>Payout Details</span><span> 80%</span></div><progress value="80" max="100">
+      </progress>
+      <div><span>Account Setup</span><span> Complete!</span></div><progress value="100" max="100">
+      </progress>
+    </div>
   </div>
 
-<div class="container">
-
+  <!-- CS: color boxes-->
+  <div class="colorCards">
+    <div class="colorCard Primary">
+        Primary
+      <p>#4e73df</p>
+    </div>
+    <div class="colorCard Success">
+        Success
+      <p>#1cc88a</p>
+    </div>
+    <div class="colorCard Info">
+        Info
+      <p>#36b9cc</p>
+    </div>
+    <div class="colorCard Warning">
+        Warning
+      <p>#f6c23e</p>
+    </div>
+    <div class="colorCard Danger">
+        Danger
+      <p>#e74a3b</p>
+    </div>
+    <div class="colorCard Secondary">
+        Secondary
+      <p>#858796</p>
+    </div>
+  </div>
+  </main>
 </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
