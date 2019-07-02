@@ -1,18 +1,435 @@
-/* Error: expected "{".
- *   ,
- * 10| $FontAwesomeCards: #dddfeb;
- *   |                           ^
- *   '
- *   Desktop/Becode/github-sites/12_sass/sass-group-project/scss/_variables.scss 10:27  @import
- *   Desktop/Becode/github-sites/12_sass/sass-group-project/scss/main.scss 2:9          root stylesheet */
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a   \2577 \a 10\2502  $FontAwesomeCards: #dddfeb;\a   \2502                            ^\a   \2575 \a   Desktop/Becode/github-sites/12_sass/sass-group-project/scss/_variables.scss 10:27  @import\a   Desktop/Becode/github-sites/12_sass/sass-group-project/scss/main.scss 2:9          root stylesheet';
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 14rem auto;
+  grid-template-areas: "side head" "side main";
+}
+.wrapper .searchbar {
+  grid-area: head;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+}
+.wrapper nav {
+  grid-area: side;
+  background-color: #4e73df;
+  color: #fff;
+  min-height: 100vh;
+  width: 14rem;
+}
+.wrapper .main {
+  grid-area: main;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.cards-container .info-card-small {
+  width: 25%;
+  max-width: 25%;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+}
+.cards-container .info-card-monthly {
+  border-left: 0.25rem solid #4e73df;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+.cards-container .info-card-monthly .card-text {
+  max-width: 100%;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.cards-container .info-card-monthly .card-text h2 {
+  color: #4e73df;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-bottom: 0.25rem;
+}
+.cards-container .info-card-monthly .card-text p {
+  color: #5a5c69;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.cards-container .info-card-monthly .progress {
+  height: 0.5rem;
+  background-color: #eaecf4;
+  border-radius: 0.35rem;
+  max-width: 100%;
+  width: 100%;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  align-self: flex-end;
+  margin-bottom: 0.3rem;
+}
+.cards-container .info-card-monthly .progress .progress-bar {
+  background-color: #4e73df;
+}
+.cards-container .info-card-monthly .icon {
+  width: auto;
+  max-width: 100%;
+}
+.cards-container .info-card-monthly .icon i {
+  color: #dddfeb;
+  line-height: 1;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 2em;
+}
+.cards-container .info-card-annual {
+  border-left: 0.25rem solid #1cc88a;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+.cards-container .info-card-annual .card-text {
+  max-width: 100%;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.cards-container .info-card-annual .card-text h2 {
+  color: #1cc88a;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-bottom: 0.25rem;
+}
+.cards-container .info-card-annual .card-text p {
+  color: #5a5c69;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.cards-container .info-card-annual .progress {
+  height: 0.5rem;
+  background-color: #eaecf4;
+  border-radius: 0.35rem;
+  max-width: 100%;
+  width: 100%;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  align-self: flex-end;
+  margin-bottom: 0.3rem;
+}
+.cards-container .info-card-annual .progress .progress-bar {
+  background-color: #1cc88a;
+}
+.cards-container .info-card-annual .icon {
+  width: auto;
+  max-width: 100%;
+}
+.cards-container .info-card-annual .icon i {
+  color: #dddfeb;
+  line-height: 1;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 2em;
+}
+.cards-container .info-card-tasks {
+  border-left: 0.25rem solid #36b9cc;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+.cards-container .info-card-tasks .card-text {
+  max-width: 100%;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.cards-container .info-card-tasks .card-text h2 {
+  color: #36b9cc;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-bottom: 0.25rem;
+}
+.cards-container .info-card-tasks .card-text p {
+  color: #5a5c69;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.cards-container .info-card-tasks .progress {
+  height: 0.5rem;
+  background-color: #eaecf4;
+  border-radius: 0.35rem;
+  max-width: 100%;
+  width: 100%;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  align-self: flex-end;
+  margin-bottom: 0.3rem;
+}
+.cards-container .info-card-tasks .progress .progress-bar {
+  background-color: #36b9cc;
+}
+.cards-container .info-card-tasks .icon {
+  width: auto;
+  max-width: 100%;
+}
+.cards-container .info-card-tasks .icon i {
+  color: #dddfeb;
+  line-height: 1;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 2em;
+}
+.cards-container .info-card-tasks .progress-bar {
+  width: 50%;
+  height: 100%;
+}
+.cards-container .info-card-pending-requests {
+  border-left: 0.25rem solid #f6c23e;
+  padding: 1.75rem 1.25rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  margin-left: 0.75rem;
+  margin-right: 0.75rem;
+}
+.cards-container .info-card-pending-requests .card-text {
+  max-width: 100%;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+.cards-container .info-card-pending-requests .card-text h2 {
+  color: #f6c23e;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-bottom: 0.25rem;
+}
+.cards-container .info-card-pending-requests .card-text p {
+  color: #5a5c69;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.cards-container .info-card-pending-requests .progress {
+  height: 0.5rem;
+  background-color: #eaecf4;
+  border-radius: 0.35rem;
+  max-width: 100%;
+  width: 100%;
+  margin-right: 0.5rem;
+  overflow: hidden;
+  align-self: flex-end;
+  margin-bottom: 0.3rem;
+}
+.cards-container .info-card-pending-requests .progress .progress-bar {
+  background-color: #f6c23e;
+}
+.cards-container .info-card-pending-requests .icon {
+  width: auto;
+  max-width: 100%;
+}
+.cards-container .info-card-pending-requests .icon i {
+  color: #dddfeb;
+  line-height: 1;
+  display: inline-block;
+  font-weight: 900;
+  font-size: 2em;
+}
+
+.colorCards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-areas:
+      "c1 c2"
+      "c3 c4"
+      "c5 c6"; */
+}
+.colorCards .colorCard.Primary {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  margin: 1rem;
+  padding: 1.25rem;
+  color: white;
+  width: 15%;
+  height: 40px;
+  background-color: #4e73df;
+}
+.colorCards .colorCard.Primary p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 80%;
+}
+.colorCards .colorCard.Success {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  margin: 1rem;
+  padding: 1.25rem;
+  color: white;
+  width: 15%;
+  height: 40px;
+  background-color: #1cc88a;
+}
+.colorCards .colorCard.Success p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 80%;
+}
+.colorCards .colorCard.Info {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  margin: 1rem;
+  padding: 1.25rem;
+  color: white;
+  width: 15%;
+  height: 40px;
+  background-color: #36b9cc;
+}
+.colorCards .colorCard.Info p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 80%;
+}
+.colorCards .colorCard.Warning {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  margin: 1rem;
+  padding: 1.25rem;
+  color: white;
+  width: 15%;
+  height: 40px;
+  background-color: #f6c23e;
+}
+.colorCards .colorCard.Warning p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 80%;
+}
+.colorCards .colorCard.Danger {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  margin: 1rem;
+  padding: 1.25rem;
+  color: white;
+  width: 15%;
+  height: 40px;
+  background-color: #e74a3b;
+}
+.colorCards .colorCard.Danger p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 80%;
+}
+.colorCards .colorCard.Secondary {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  margin: 1rem;
+  padding: 1.25rem;
+  color: white;
+  width: 15%;
+  height: 40px;
+  background-color: #858796;
+}
+.colorCards .colorCard.Secondary p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 80%;
+}
+
+.search {
+  display: flex;
+  max-width: 45%;
+  height: 30px;
+}
+.search .form-control:focus {
+  border-color: #4e73df;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(39, 54, 70, 0.6);
 }
