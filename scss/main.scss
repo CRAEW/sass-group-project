@@ -1,0 +1,49 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "components";
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  width: 1150px;
+  margin: 0 auto;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+
+  .info-card-small {
+    width: 25%;
+    max-width: 25%;
+    @include basic-card;
+  }
+
+  .info-card-monthly {
+    @include info-card-small($Primary);
+  }
+
+  .info-card-annual {
+    @include info-card-small($Success);
+  }
+
+  .info-card-tasks {
+    @include info-card-small($Info);
+
+    .progress-bar {
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  .info-card-pending-requests {
+    @include info-card-small($Warning);
+  }
+}
