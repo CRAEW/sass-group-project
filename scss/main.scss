@@ -29,6 +29,11 @@ body {
         flex-direction: row;
         justify-content: space-between;
         padding: 15px;
+
+        .searchButton {
+            background-color: $Primary;
+            color: #fff;
+        }
     }
 
     nav {

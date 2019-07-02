@@ -76,6 +76,10 @@ body {
   justify-content: space-between;
   padding: 15px;
 }
+.wrapper .searchbar .searchButton {
+  background-color: #4e73df;
+  color: #fff;
+}
 .wrapper nav {
   grid-area: side;
   background-color: #4e73df;
@@ -433,3 +437,5 @@ body {
   border-color: #4e73df;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(39, 54, 70, 0.6);
 }
+
+/*# sourceMappingURL=main.css.map */
