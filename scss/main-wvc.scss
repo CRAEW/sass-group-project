@@ -5,6 +5,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     font-size: 1rem;
@@ -93,7 +97,6 @@ h6 {
 }
 
 
-
 //WVC: Cards on top of HTML
 .cards-container {
     display: flex;
@@ -127,9 +130,11 @@ h6 {
     }
   }
 
-
 //KREMENA: Basic cards header en area
 .basic-card-box {
+  @include basic-card;
+  @include basic-card-box;
+  max-width: 50%;
   .basic-card-header {
     background-color: $lightblue;
     border-bottom: 1px solid $BorderColor;
@@ -157,10 +162,6 @@ h6 {
 
 //WVC: Charts
 .chart {
-  @include basic-card;
-  @include basic-card-box;
-  max-width: 50%;
-
   .server-migration .progress-bar {
     @include progress-bar($Danger);
   }
@@ -191,22 +192,40 @@ h6 {
   }
 }
 
-// wvc: illustrations section
-.illustrations {
-  @include basic-card;
-  @include basic-card-box;
-  max-width: 50%;
+// wvc: image center
+.image-center {
+  width: 100%;
+  text-align: center;
 
-  .image-center {
-    width: 100%;
-    text-align: center;
-
-    img {
-      width: 25rem;
-    }
+  img {
+    width: 25rem;
   }
 }
 
+
+//legenda
+.legend ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  font-size: 14px;
+  li i {
+    margin-right: 5px;
+  }
+  li {
+    margin-right: .5rem;
+    &:nth-child(1) .fas {
+      color: $Primary;
+    }
+    &:nth-child(2) .fas {
+      color: $Success;
+    }
+    &:nth-child(3) .fas {
+      color: $Info;
+    }
+  }
+}
 
 // CS: add bg-color to colorCard
 .colorCards {
