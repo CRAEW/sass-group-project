@@ -63,6 +63,22 @@ li.active .dropdown-content {
   display: block;
 }
 
+//WVC: opmaak h6
+h6 {
+  font-weight: 700;
+  font-size: 80%;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  color: $Secondary;
+}
+
+//WVC: opmaak h6 flex in section chart
+.chart h6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 //WVC: Progress-bars main bar layout (container)
 .progress {
   height: 0.5rem;
@@ -113,21 +129,30 @@ li.active .dropdown-content {
 
 
 //KREMENA: Basic cards header en area
-.basic-card-header {
-  height: 52px;
-  background-color: $lightblue;
-  border-bottom: 1px solid $BorderColor;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  padding: 16px;
-  margin:0;
-  h5 {
-    color:$Primary;
-    font-weight: bold;
+.basic-card-box {
+  .basic-card-header {
+    background-color: $lightblue;
+    border-bottom: 1px solid $BorderColor;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 16px;
+    margin:0;
+    h5 {
+      color:$Primary;
+      font-weight: bold;
+    }
   }
-}
-.basic-card-area {
-  padding: 1.25rem;
+  .basic-card-area {
+    padding: 1.25rem;
+    color: $Secondary;
+
+    p {
+      margin-bottom: 16px;
+    }
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
 
 //WVC: Charts
@@ -158,6 +183,27 @@ li.active .dropdown-content {
 
   .progress {
     height: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .chart-area div:last-child .progress {
+    margin-bottom: 0;
+  }
+}
+
+// wvc: illustrations section
+.illustrations {
+  @include basic-card;
+  @include basic-card-box;
+  max-width: 50%;
+
+  .image-center {
+    width: 100%;
+    text-align: center;
+
+    img {
+      width: 25rem;
+    }
   }
 }
 
@@ -202,6 +248,8 @@ li.active .dropdown-content {
         //grid-area: c6;
     }
 }
+
+
 
 // css searchbalk
 .search {
