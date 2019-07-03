@@ -53,6 +53,10 @@ table {
   border-spacing: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Nunito", sans-serif;
   font-size: 1rem;
@@ -300,6 +304,17 @@ h6 {
   font-size: 2em;
 }
 
+.basic-card-box {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+  height: auto;
+  margin: 16px;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-width: 50%;
+}
 .basic-card-box .basic-card-header {
   background-color: #f8f9fc;
   border-bottom: 1px solid #e3e6f0;
@@ -323,17 +338,6 @@ h6 {
   margin-bottom: 0;
 }
 
-.chart {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
-  background-color: #fff;
-  border: 1px solid #e3e6f0;
-  border-radius: 0.35rem;
-  height: auto;
-  margin: 16px;
-  box-sizing: border-box;
-  max-width: 100%;
-  max-width: 50%;
-}
 .chart .server-migration .progress-bar {
   background-color: #e74a3b;
   display: block;
@@ -367,23 +371,35 @@ h6 {
   margin-bottom: 0;
 }
 
-.illustrations {
-  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
-  background-color: #fff;
-  border: 1px solid #e3e6f0;
-  border-radius: 0.35rem;
-  height: auto;
-  margin: 16px;
-  box-sizing: border-box;
-  max-width: 100%;
-  max-width: 50%;
-}
-.illustrations .image-center {
+.image-center {
   width: 100%;
   text-align: center;
 }
-.illustrations .image-center img {
+.image-center img {
   width: 25rem;
+}
+
+.legend ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.legend ul li i {
+  margin-right: 5px;
+}
+.legend ul li {
+  margin-right: 0.5rem;
+}
+.legend ul li:nth-child(1) .fas {
+  color: #4e73df;
+}
+.legend ul li:nth-child(2) .fas {
+  color: #1cc88a;
+}
+.legend ul li:nth-child(3) .fas {
+  color: #36b9cc;
 }
 
 .colorCards {
