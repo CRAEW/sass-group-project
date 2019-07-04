@@ -61,7 +61,10 @@ nav {
   background-size: cover;
   color: #fff;
   min-height: 100vh;
-  width: 14rem;
+  width: 10rem;
+}
+nav .res-noshow {
+  display: none;
 }
 nav li .dropdown-content {
   display: none;
@@ -91,31 +94,29 @@ nav h1 .fas.fa-laugh-wink {
   font-weight: 900;
   font-size: 2rem;
 }
-nav .navigation-bar {
-  color: #dddfeb;
-  font-weight: 400;
-  font-size: 0.85rem;
-  margin: 1rem;
+
+.header-justify {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-nav .navigation-bar i:hover, nav .navigation-bar h2:hover, nav .navigation-bar h3:hover, nav .navigation-bar li:hover {
-  color: #fff;
+
+.chartdrop {
+  height: auto;
+  width: 4rem;
 }
-nav .navigation-bar .i-spacing {
-  margin: 15px;
+.chartdrop .dropdown {
+  position: relative;
 }
-nav .navigation-bar span {
-  align-self: right;
+.chartdrop .dropdown .fa-ellipsis-v {
+  color: #858796;
 }
-nav .navigation-bar h2 {
-  margin: 5px 0px;
-}
-nav .navigation-bar h3 {
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 0.65rem;
-  margin: 15px 0px 0px 15px;
-}
-nav .navigation-bar .dropdown-content {
+.chartdrop .dropdown-content {
+  position: absolute;
+  top: 5px;
+  right: -32px;
+  width: 300%;
   background-color: #fff;
   margin: 15px;
   padding-bottom: 5px;
@@ -124,14 +125,14 @@ nav .navigation-bar .dropdown-content {
   border: 1px solid #e3e6f0;
   border-radius: 0.35rem;
 }
-nav .navigation-bar .dropdown-content h4 {
+.chartdrop .dropdown-content h4 {
   padding: 0.5rem 1.5rem;
   text-transform: uppercase;
   font-weight: 800;
   font-size: 0.65rem;
   color: #b7b9cc;
 }
-nav .navigation-bar .dropdown-content a {
+.chartdrop .dropdown-content a {
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
   font-size: 0.85rem;
@@ -140,18 +141,92 @@ nav .navigation-bar .dropdown-content a {
   color: #3a3b45;
   text-decoration: none;
 }
-nav .navigation-bar .dropdown-content a:hover {
+.chartdrop .dropdown-content a:hover {
+  border-radius: 0.35rem;
+  background-color: #e3e6f0;
+}
+.chartdrop li .dropdown-content {
+  display: none;
+}
+.chartdrop li.active .dropdown-content {
+  display: block;
+}
+
+.navigation-bar {
+  color: #dddfeb;
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin: 1rem;
+}
+.navigation-bar h2:hover, .navigation-bar h3:hover, .navigation-bar i:hover, .navigation-bar li:hover {
+  color: #fff;
+}
+.navigation-bar .i-spacing {
+  margin: 15px;
+}
+.navigation-bar span {
+  align-self: right;
+}
+.navigation-bar h2 {
+  margin: 5px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.navigation-bar h3 {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.65rem;
+  text-align: center;
+}
+.navigation-bar .dropdown-content {
+  background-color: #fff;
+  margin: 15px;
+  padding-bottom: 5px;
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+  background-color: #fff;
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+}
+.navigation-bar .dropdown-content h4 {
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.65rem;
+  color: #b7b9cc;
+}
+.navigation-bar .dropdown-content a {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  display: block;
+  color: #3a3b45;
+  text-decoration: none;
+}
+.navigation-bar .dropdown-content a:hover {
   border-radius: 0.35rem;
   background-color: #e3e6f0;
 }
 
 .drop-title {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 .drop-title i:last-child {
-  margin-left: auto;
+  display: none;
+}
+.drop-title .div {
+  font-weight: 400;
+}
+
+.resp-i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 
 .go-left {
@@ -174,7 +249,7 @@ nav .navigation-bar .dropdown-content a:hover {
 
 .colorCards {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
@@ -188,7 +263,7 @@ nav .navigation-bar .dropdown-content a:hover {
   border-radius: 0.35rem;
   padding: 1.25rem;
   color: white;
-  width: 48%;
+  width: 100%;
   margin-bottom: 15px;
   height: auto;
   background-color: #4e73df;
@@ -205,7 +280,7 @@ nav .navigation-bar .dropdown-content a:hover {
   border-radius: 0.35rem;
   padding: 1.25rem;
   color: white;
-  width: 48%;
+  width: 100%;
   margin-bottom: 15px;
   height: auto;
   background-color: #1cc88a;
@@ -222,7 +297,7 @@ nav .navigation-bar .dropdown-content a:hover {
   border-radius: 0.35rem;
   padding: 1.25rem;
   color: white;
-  width: 48%;
+  width: 100%;
   margin-bottom: 15px;
   height: auto;
   background-color: #36b9cc;
@@ -239,7 +314,7 @@ nav .navigation-bar .dropdown-content a:hover {
   border-radius: 0.35rem;
   padding: 1.25rem;
   color: white;
-  width: 48%;
+  width: 100%;
   margin-bottom: 15px;
   height: auto;
   background-color: #f6c23e;
@@ -256,7 +331,7 @@ nav .navigation-bar .dropdown-content a:hover {
   border-radius: 0.35rem;
   padding: 1.25rem;
   color: white;
-  width: 48%;
+  width: 100%;
   margin-bottom: 15px;
   height: auto;
   background-color: #e74a3b;
@@ -273,7 +348,7 @@ nav .navigation-bar .dropdown-content a:hover {
   border-radius: 0.35rem;
   padding: 1.25rem;
   color: white;
-  width: 48%;
+  width: 100%;
   margin-bottom: 15px;
   height: auto;
   background-color: #858796;
@@ -342,15 +417,13 @@ header .searchbar .search .searchButton {
   width: 2rem;
 }
 header .user ul {
-  width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
   align-items: baseline;
   color: #858796;
 }
 header .user ul li {
-  margin-right: 0.25rem;
+  margin-left: 1rem;
 }
 header .user ul li:last-child {
   border-left: 1px solid #858796;
@@ -365,6 +438,7 @@ header .user ul a.notification-wrapper {
   padding: 0 0.75rem;
 }
 header .user ul a.notification-wrapper .fas {
+  margin: 0 5px 0 0;
   font-weight: 900;
   text-align: center;
   width: 1.25;
@@ -375,11 +449,14 @@ header .user ul a.notification-wrapper .fas {
 header .user ul a.notification-wrapper .fas:hover {
   color: #858796;
 }
+header .user ul a.notification-wrapper p {
+  display: none;
+}
 header .user ul a.notification-wrapper .notification {
   position: absolute;
   transform: scale(0.7);
   transform-origin: top right;
-  right: 0.3rem;
+  right: 0.5rem;
   top: -0.4rem;
   display: inline-block;
   padding: 0.25em 0.4em;
@@ -400,7 +477,7 @@ header .user ul .user-image {
   width: 2rem;
   border-radius: 50%;
   border: 1px solid black;
-  margin-left: 15px;
+  margin-left: 5px;
 }
 
 * {
@@ -413,7 +490,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   text-align: left;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   background-color: #f8f9fc;
 }
@@ -439,11 +516,7 @@ main {
 
 .flex-column-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.flex-column-container .flex-column {
-  width: 50%;
+  flex-direction: column;
 }
 
 .progress {
@@ -786,28 +859,39 @@ footer .go-top i {
     grid-template-areas: "side head" "side main" "side footer";
   }
 
+  header .user ul a.notification-wrapper p {
+    display: block;
+  }
+
   .searchbar input {
     width: 20rem;
   }
 
-  .searchbar .user i {
-    margin: 0px 15px 0px 0px;
+  .searchbar .user .fas {
+    margin: 0 15px 0 0;
     color: #e3e6f0;
   }
-  .searchbar .user p {
-    display: block;
-  }
-  .searchbar .user img {
+  .searchbar .user .user-image {
     margin-left: 15px;
   }
 
+  nav {
+    width: 14rem;
+  }
   nav .res-noshow {
     display: block;
   }
   nav .navigation-bar h2 {
-    margin: 5px 0px;
+    margin: 5px 0;
     display: block;
     text-align: left;
+  }
+  nav .navigation-bar h3 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.65rem;
+    text-align: left;
+    margin: 15px 0 0 15px;
   }
 
   .drop-title {

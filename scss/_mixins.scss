@@ -67,7 +67,7 @@ box-sizing: border-box;
 @mixin colorCard($bgCard) {
     padding: 1.25rem;
     color: white;
-    width: 48%;
+    width: 100%;
     margin-bottom: 15px;
     height: auto;
     background-color: $bgCard;
@@ -76,4 +76,30 @@ box-sizing: border-box;
         color: rgba(255,255,255,.5);
         font-size: 80%;
     }
+}
+
+
+
+@mixin dropdown-layout {
+  h4 {
+    padding: 0.5rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.65rem;
+    color: #b7b9cc;
+  }
+  a {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    display: block;
+    color: #3a3b45;
+    text-decoration: none;
+
+    &:hover {
+      border-radius: 0.35rem;
+      background-color: #e3e6f0;
+    }
+  }
 }
