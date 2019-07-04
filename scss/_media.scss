@@ -1,0 +1,135 @@
+@media only screen and (min-width: 767px) {
+
+  .wrapper {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 14rem auto; //RESPONSIVE
+      grid-template-areas:
+          "side head"
+          "side main"
+          "side footer";
+  }
+
+    .searchbar input {
+        width: 20rem;
+    }
+
+    .searchbar .user {
+        i {
+            margin: 0px 15px 0px 0px;
+            color: #e3e6f0;
+        }
+
+        p {
+            display: block;
+          }
+
+        img {
+            margin-left: 15px;
+        }
+    }
+
+    nav {
+        .res-noshow {
+            display: block;
+        }
+
+        .navigation-bar h2 {
+            margin: 5px 0px;
+            display: block;
+            text-align: left;
+        }
+    }
+
+    .drop-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+
+        i:last-child {
+            display: block;
+            margin-left: auto;
+        }
+
+        .div {
+            font-weight: 400;
+        }
+    }
+
+    .resp-i {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: baseline;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        .info-card-small {
+            width: 25%;
+            max-width: 25%;
+            @include basic-card;
+            }
+
+            .info-card-monthly {
+            @include info-card-small($Primary);
+            }
+
+            .info-card-annual {
+            @include info-card-small($Success);
+            }
+
+            .info-card-tasks {
+            @include info-card-small($Info);
+                .progress-bar {
+                    @include progress-bar($Info);
+                }
+            }
+
+            .info-card-pending-requests {
+            @include info-card-small($Warning);
+            }
+    }
+
+    .flex-row-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .earnings {
+            flex-grow: 3;
+        }
+
+        .revenue {
+            flex-grow: 1;
+        }
+    }
+
+    .flex-column-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .flex-column {
+            width: 50%;
+        }
+    }
+
+    .colorCards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: 0.5rem;
+
+        .colorCard {
+            width: 48%;
+        }
+    }
+}

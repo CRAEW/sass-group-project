@@ -3,14 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+  <title>SB Admin voorlopig</title>
+  <link rel="stylesheet" href="css/main.css">
   <script src="https://kit.fontawesome.com/24d7844539.js"></script>
 
-  <link rel="stylesheet" href="css/main.css">
 
-  <title>SB Admin voorlopig</title>
+
+
 </head>
 
 <body>
@@ -25,12 +26,27 @@
         </div>
 
         <div class="user">
-          <i class="fas fa-bell"></i>
-          <i class="fas fa-envelope"></i>
-          <p>Valerie Luna</p>
-          <img src="images/user.png" alt="User image">
-        </div>
-
+          <ul>
+            <li>
+              <a href="#" rel="noreferrer" class="notification-wrapper">
+                <i class="fas fa-bell"></i>
+                <span class="notification">3+</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" rel="noreferrer" class="notification-wrapper">
+                <i class="fas fa-envelope"></i>
+                <span class="notification">7</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" rel="noreferrer" class="notification-wrapper">
+                <span class="username">Valerie Luna</span>
+                <img class="user-image" src="images/user.png" alt="User image">
+              </a>
+            </li>
+          </ul>
+        </div> <!-- End class user -->
       </div>
     </header>
 

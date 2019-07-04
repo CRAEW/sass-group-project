@@ -23,95 +23,24 @@ body {
 .wrapper {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 14rem auto;
+    grid-template-columns: 10rem auto; //RESPONSIVE
     grid-template-areas:
         "side head"
         "side main"
         "side footer";
 }
 
-header {
-    box-shadow: 0 0.15rem 1.75rem 0 rgba(58,59,69,.15);
-    background-color: #fff;
-}
-
-.searchbar {
-    grid-area: head;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 15px;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    
-    input {
-        border: none;
-        border-top-left-radius: 0.35rem; 
-        border-bottom-left-radius: 0.35rem; 
-        flex: 1 1 auto;
-        background-color: $lightblue;
-        width: 20rem;
-        padding: 0.5rem;
-    }
-
-    .searchButton {
-        background-color: $Primary;
-        color: #fff;
-        border: none;
-        border-top-right-radius: 0.35rem; 
-        border-bottom-right-radius: 0.35rem; 
-        width: 2rem;
-    }
-
-    .user {
-        display: flex;
-        color: $MainTextColor;
-
-        i {
-            margin: 0px 15px 0px 0px;
-            color: #e3e6f0;
-        }
-
-        img {
-            height: 2rem;
-            width: 2rem;
-            border-radius: 50%;
-            border: 1px solid black;
-            margin-left: 15px;
-        }
-    }
-    
-}
-
-.search {
-    display: flex;
-    height: 2rem;
-
-    .form-control:focus {
-        border-color: #4e73df;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(39, 54, 70, 0.6);
-    }
-}
-      
 main {
     grid-area: main;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    
+
 }
 
 .flex-row-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
-
-    .earnings {
-        flex-grow: 3;
-    }
-    
-    .revenue {
-        flex-grow: 1;
-    }
 }
 
 
@@ -143,13 +72,12 @@ main {
 //WVC: Cards on top of HTML - main.scss
 .cards-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
 
     .info-card-small {
-    width: 25%;
-    max-width: 25%;
+    width: 100%;
     @include basic-card;
     }
 
@@ -179,7 +107,7 @@ main {
     flex-direction: row;
     justify-content: space-between;
   }
-  
+
   //WVC: Progress-bars main bar layout (container)
   .progress {
     height: 0.5rem;
@@ -192,41 +120,7 @@ main {
     align-self: flex-end;
     margin-bottom: 0.3rem;
   }
-  
-  
-  //WVC: Cards on top of HTML
-  .cards-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-  
-      .info-card-small {
-        width: 25%;
-        max-width: 25%;
-        @include basic-card;
-      }
-  
-      .info-card-monthly {
-        @include info-card-small($Primary);
-      }
-  
-      .info-card-annual {
-        @include info-card-small($Success);
-      }
-  
-      .info-card-tasks {
-        @include info-card-small($Info);
-        .progress-bar {
-          @include progress-bar($Info);
-        }
-      }
-  
-      .info-card-pending-requests {
-        @include info-card-small($Warning);
-      }
-    }
-  
+
   //KREMENA: Basic cards header en area
   .basic-card-box {
     @include basic-card;
@@ -246,7 +140,7 @@ main {
     .basic-card-area {
       padding: 1.25rem;
       color: $Secondary;
-  
+
       p {
         margin-bottom: 16px;
       }
@@ -255,34 +149,34 @@ main {
       }
     }
   }
-  
+
   //WVC: Charts
   .chart {
     .server-migration .progress-bar {
       @include progress-bar($Danger);
     }
-  
+
     .sales-tracking .progress-bar {
       @include progress-bar($Warning);
     }
-  
+
     .customer-database .progress-bar {
       @include progress-bar($Primary);
     }
-  
+
     .payout-details .progress-bar {
       @include progress-bar($Info);
     }
-  
+
     .account-setup .progress-bar {
       @include progress-bar($Success);
     }
-  
+
     .progress {
       height: 1rem;
       margin-bottom: 1.5rem;
     }
-  
+
     .chart-area div:last-child .progress {
       margin-bottom: 0;
     }
@@ -301,8 +195,8 @@ main {
         width: 100%;
     }
   }
-  
-  
+
+
   //legenda
   .legend ul {
     display: flex;
@@ -358,3 +252,5 @@ footer {
         }
     }
 }
+
+@import "media";
