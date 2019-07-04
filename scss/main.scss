@@ -1,9 +1,13 @@
 @import 'reset';
 @import 'variables';
-@import 'components';
 @import 'mixins';
+@import 'components';
 
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+* {
+    box-sizing: border-box;
+}
 
 body {
     font-family: 'Nunito', sans-serif;
@@ -11,8 +15,9 @@ body {
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
-    width: 100%;
+    width: 100vw;
     margin: 0 auto;
+    background-color: $lightblue;
 }
 
 .wrapper {
@@ -21,39 +26,121 @@ body {
     grid-template-columns: 14rem auto;
     grid-template-areas:
         "side head"
-        "side main";
-
-    .searchbar {
-        grid-area: head;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 15px;
-
-        .searchButton {
-            background-color: $Primary;
-            color: #fff;
-        }
-    }
-
-    nav {
-        grid-area: side;
-        background-color: $Primary;
-        color: #fff;
-        min-height: 100vh;
-        width: 14rem;
-
-    }
-
-    .main {
-        grid-area: main;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
+        "side main"
+        "side footer";
 }
 
+header {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58,59,69,.15);
+    background-color: #fff;
+}
+
+.searchbar {
+    grid-area: head;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+    input {
+        border: none;
+        border-top-left-radius: 0.35rem; 
+        border-bottom-left-radius: 0.35rem; 
+        flex: 1 1 auto;
+        background-color: $lightblue;
+        width: 20rem;
+        padding: 0.5rem;
+    }
+
+    .searchButton {
+        background-color: $Primary;
+        color: #fff;
+        border: none;
+        border-top-right-radius: 0.35rem; 
+        border-bottom-right-radius: 0.35rem; 
+        width: 2rem;
+    }
+
+    .user {
+        display: flex;
+        color: $MainTextColor;
+
+        i {
+            margin: 0px 15px 0px 0px;
+            color: #e3e6f0;
+        }
+
+        img {
+            height: 2rem;
+            width: 2rem;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin-left: 15px;
+        }
+    }
+    
+}
+
+.search {
+    display: flex;
+    height: 2rem;
+
+    .form-control:focus {
+        border-color: #4e73df;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(39, 54, 70, 0.6);
+    }
+}
+      
+main {
+    grid-area: main;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    
+}
+
+.flex-row-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .earnings {
+        flex-grow: 3;
+    }
+    
+    .revenue {
+        flex-grow: 1;
+    }
+}
+
+
+
+.flex-column-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .flex-column {
+        width: 50%;
+    }
+}
+
+
+//WVC: Progress-bars main bar layout (container)
+.progress {
+    height: 0.5rem;
+    background-color: #eaecf4;
+    border-radius: 0.35rem;
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0.5rem;
+    overflow: hidden;
+    align-self: flex-end;
+    margin-bottom: 0.3rem;
+}
+
+//WVC: Cards on top of HTML - main.scss
 .cards-container {
     display: flex;
     flex-direction: row;
@@ -61,84 +148,213 @@ body {
     width: 100%;
 
     .info-card-small {
-      width: 25%;
-      max-width: 25%;
-      @include basic-card;
+    width: 25%;
+    max-width: 25%;
+    @include basic-card;
     }
 
     .info-card-monthly {
-      @include info-card-small($Primary);
+    @include info-card-small($Primary);
     }
 
     .info-card-annual {
-      @include info-card-small($Success);
+    @include info-card-small($Success);
     }
 
     .info-card-tasks {
-      @include info-card-small($Info);
-
-      .progress-bar {
-        width: 50%;
-        height: 100%;
-      }
+    @include info-card-small($Info);
+        .progress-bar {
+            @include progress-bar($Info);
+        }
     }
 
     .info-card-pending-requests {
-      @include info-card-small($Warning);
-    }
-  }
-
-
-
-// CS: add bg-color to colorCard
-.colorCards {
-    @include flex-row-wrap;
-    /* display: grid;
-    grid-template-areas:
-        "c1 c2"
-        "c3 c4"
-        "c5 c6"; */
-
-    .colorCard.Primary {
-        @include basic-card;
-        @include colorCard($Primary);
-        //grid-area: c1;
-    }
-    .colorCard.Success {
-        @include basic-card;
-        @include colorCard($Success);
-        //grid-area: c2;
-    }
-    .colorCard.Info {
-        @include basic-card;
-        @include colorCard($Info);
-        //grid-area: c3;
-    }
-    .colorCard.Warning {
-        @include basic-card;
-        @include colorCard($Warning);
-        //grid-area: c4;
-    }
-    .colorCard.Danger {
-        @include basic-card;
-        @include colorCard($Danger);
-        //grid-area: c5;
-    }
-    .colorCard.Secondary {
-        @include basic-card;
-        @include colorCard($Secondary);
-        //grid-area: c6;
+    @include info-card-small($Warning);
     }
 }
 
-// css searchbalk
-.search {
+//WVC: opmaak h6 flex in section chart
+.chart h6 {
     display: flex;
-    max-width: 45%;
-    height: 30px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  //WVC: Progress-bars main bar layout (container)
+  .progress {
+    height: 0.5rem;
+    background-color: #eaecf4;
+    border-radius: 0.35rem;
+    max-width: 100%;
+    width: 100%;
+    margin-right: 0.5rem;
+    overflow: hidden;
+    align-self: flex-end;
+    margin-bottom: 0.3rem;
+  }
+  
+  
+  //WVC: Cards on top of HTML
+  .cards-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+  
+      .info-card-small {
+        width: 25%;
+        max-width: 25%;
+        @include basic-card;
+      }
+  
+      .info-card-monthly {
+        @include info-card-small($Primary);
+      }
+  
+      .info-card-annual {
+        @include info-card-small($Success);
+      }
+  
+      .info-card-tasks {
+        @include info-card-small($Info);
+        .progress-bar {
+          @include progress-bar($Info);
+        }
+      }
+  
+      .info-card-pending-requests {
+        @include info-card-small($Warning);
+      }
+    }
+  
+  //KREMENA: Basic cards header en area
+  .basic-card-box {
+    @include basic-card;
+    @include basic-card-box;
+    .basic-card-header {
+      background-color: $lightblue;
+      border-bottom: 1px solid $BorderColor;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      padding: 16px;
+      margin:0;
+      h5 {
+        color:$Primary;
+        font-weight: bold;
+      }
+    }
+    .basic-card-area {
+      padding: 1.25rem;
+      color: $Secondary;
+  
+      p {
+        margin-bottom: 16px;
+      }
+      p:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  //WVC: Charts
+  .chart {
+    .server-migration .progress-bar {
+      @include progress-bar($Danger);
+    }
+  
+    .sales-tracking .progress-bar {
+      @include progress-bar($Warning);
+    }
+  
+    .customer-database .progress-bar {
+      @include progress-bar($Primary);
+    }
+  
+    .payout-details .progress-bar {
+      @include progress-bar($Info);
+    }
+  
+    .account-setup .progress-bar {
+      @include progress-bar($Success);
+    }
+  
+    .progress {
+      height: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .chart-area div:last-child .progress {
+      margin-bottom: 0;
+    }
+  }
+  //illustrations
+  .illustrations img {
+      width: 25rem;
+  }
+  // wvc: image center
+  .image-center {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
 
-    .form-control:focus {
-        border-color: #4e73df;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(39, 54, 70, 0.6);
+    img {
+        width: 100%;
+    }
+  }
+  
+  
+  //legenda
+  .legend ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    font-size: 14px;
+    li i {
+      margin-right: 5px;
+    }
+    li {
+      margin-right: .5rem;
+      &:nth-child(1) .fas {
+        color: $Primary;
+      }
+      &:nth-child(2) .fas {
+        color: $Success;
+      }
+      &:nth-child(3) .fas {
+        color: $Info;
+      }
+    }
+  }
+
+footer {
+    grid-area: footer;
+    padding: 2rem 0;
+    text-align: center;
+    color: $MainTextColor;
+    p {
+        line-height: 1;
+        font-size: .8rem;
+    }
+
+    .go-top {
+        width: 2.75rem;
+        height: 2.75rem;
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(90, 92, 105, .5);
+        line-height: 46px;
+        border-radius: 0.35rem;
+        &:hover {
+            background-color: rgba(90, 92, 105, 1);
+        }
+
+        i {
+            font-weight: 800;
+            color: #fff;
+        }
     }
 }
