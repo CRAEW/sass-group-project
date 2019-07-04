@@ -1093,7 +1093,8 @@ footer .go-top i {
     width: 100%;
   }
   .flex-row-container .earnings {
-    flex-grow: 3;
+    flex-grow: 2;
+    width: 60%;
   }
   .flex-row-container .revenue {
     flex-grow: 1;
